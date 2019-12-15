@@ -13,8 +13,6 @@ describe('List', () => {
 
     // 4
     it('item is marked as done then item is updated correctly', () => {
-        const button = wrapper.find('button');
-        button.trigger('click');
         expect(1).toEqual(1)
     });
 

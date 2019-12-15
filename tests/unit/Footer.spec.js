@@ -1,15 +1,20 @@
 import {mount} from '@vue/test-utils'
 import Footer from "../../src/components/Footer.vue";
 
-describe('Footer component behavior', () => {
+describe('Footer component', () => {
 
     const wrapper = mount(Footer);
 
     // 3
-    it('Check if + button is clicked in Footer component "open" property in Footer component changes to true', () => {
-        const button = wrapper.find('button');
+    it('"open" property changes to true if "+" button is clicked', () => {
+
+        // Check that componenet is in correct state
+        expect(wrapper.vm.open).toBe(false);
+
+        // Should add an id or class for the task adding span if in the future there are more than one <span>-s in Footer
+        const button = wrapper.find('span');
         button.trigger('click');
-        expect(1).toEqual(1)
+        expect(wrapper.vm.open).toBe(true);
     });
 
 
